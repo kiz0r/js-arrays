@@ -146,3 +146,54 @@ console.log(
   'Array : ',
   thereIsNot100
 );
+
+// are there all elements of an array paired ?
+const pairedArray = [0, 2, 4, 6, 8, 10, 12];
+const unpairedArray = [0, 2, 4, 6, 7, 8, 10, 12];
+
+const isPaired = function (array) {
+  let counter = 0;
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] % 2 === 0) {
+      counter += 1;
+    }
+  }
+  if (counter === array.length) {
+    return `All elements in this array are paired.`;
+  } else {
+    return `There are not paired elements or not all elements in this array are paired.`;
+  }
+  // неработающая тернарка
+  // counter === array.length
+  //   ? `All elements in this array are paired`
+  //   : `There are not paired elements or not all elements in this array are paired`;
+};
+
+console.log(isPaired(pairedArray)); // test 1 => successfull
+console.log(isPaired(unpairedArray)); // test 2 => successfull
+
+// at least one negative element ?
+const arrayWithNegative = [-8, 1, 6, 0];
+const arrayWithoutNegative = [8, 1, 6, 0];
+
+const atLeastOneNegative = function (array) {
+  let counter = 0;
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] < 0) {
+      counter += 1;
+    }
+  }
+  if (counter === 0) {
+    return `In this array there are not any negative elements.`;
+  } else {
+    return `In this array are located ${counter} negative element(s).`;
+  }
+
+  // неработающая тернарка
+  // counter === 0
+  //   ? `In this array there are not any negative elements.`
+  //   : `In this array are located ${counter} negative elements`;
+};
+
+console.log(atLeastOneNegative(arrayWithNegative));
+console.log(atLeastOneNegative(arrayWithoutNegative));
