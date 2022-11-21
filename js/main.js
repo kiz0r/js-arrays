@@ -158,15 +158,11 @@ const isPaired = function (array) {
       counter += 1;
     }
   }
-  if (counter === array.length) {
-    return `All elements in this array are paired.`;
-  } else {
-    return `There are not paired elements or not all elements in this array are paired.`;
-  }
-  // неработающая тернарка
-  // counter === array.length
-  //   ? `All elements in this array are paired`
-  //   : `There are not paired elements or not all elements in this array are paired`;
+  const result =
+    counter === array.length
+      ? `All elements in this array are paired`
+      : `There are not paired elements or not all elements in this array are paired`;
+  return result;
 };
 
 console.log(isPaired(pairedArray)); // test 1 => successfull
@@ -183,16 +179,11 @@ const atLeastOneNegative = function (array) {
       counter += 1;
     }
   }
-  if (counter === 0) {
-    return `In this array there are not any negative elements.`;
-  } else {
-    return `In this array are located ${counter} negative element(s).`;
-  }
-
-  // неработающая тернарка
-  // counter === 0
-  //   ? `In this array there are not any negative elements.`
-  //   : `In this array are located ${counter} negative elements`;
+  const result =
+    counter === 0
+      ? `In this array there are not any negative elements.`
+      : `In this array are located ${counter} negative elements`;
+  return result;
 };
 
 console.log(atLeastOneNegative(arrayWithNegative));
