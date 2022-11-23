@@ -42,10 +42,8 @@ console.log('The third copy of arrayOfNumbers : ', arrayOfNumbers3);
 // 7 Підрахувати кількість нульових елементів.
 
 console.group('Output elements of array with paired index : ');
-for (let i = 0; i < arrayOfNumbers.length; i++) {
-  if (i % 2 === 0) {
-    console.log(arrayOfNumbers[i]);
-  }
+for (let i = 0; i < arrayOfNumbers.length; i += 2) {
+  console.log(arrayOfNumbers[i]);
 }
 console.groupEnd();
 
