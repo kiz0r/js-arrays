@@ -145,42 +145,30 @@ console.log(
   thereIsNot100
 );
 
-// are there all elements of an array paired ?
-const pairedArray = [0, 2, 4, 6, 8, 10, 12];
-const unpairedArray = [0, 2, 4, 6, 7, 8, 10, 12];
+// are there all elements of an array even ?
+const evenArray = [0, 2, 4, 6, 8, 10, 12];
+const oddArray = [0, 2, 4, 6, 7, 8, 10, 12];
 
-const isPaired = function (array) {
-  let counter = 0;
-  for (let i = 0; i < array.length; i++) {
-    if (array[i] % 2 === 0) {
-      counter += 1;
-    }
-  }
-  const result =
-    counter === array.length
-      ? `All elements in this array are paired`
-      : `There are not paired elements or not all elements in this array are paired`;
+// const isEven = (el) => el % 2 === 0;
+
+parityOutput = function (array) {
+  const result = array.every((el) => el % 2 === 0)
+    ? `All elements in this array are even.`
+    : `There are not even elements or not all elements in this array are even.`;
   return result;
 };
 
-console.log(isPaired(pairedArray)); // test 1 => successfull
-console.log(isPaired(unpairedArray)); // test 2 => successfull
+console.log(parityOutput(evenArray));
+console.log(parityOutput(oddArray));
 
 // at least one negative element ?
 const arrayWithNegative = [-8, 1, 6, 0];
 const arrayWithoutNegative = [8, 1, 6, 0];
 
 const atLeastOneNegative = function (array) {
-  let counter = 0;
-  for (let i = 0; i < array.length; i++) {
-    if (array[i] < 0) {
-      counter += 1;
-    }
-  }
-  const result =
-    counter === 0
-      ? `In this array there are not any negative elements.`
-      : `In this array are located ${counter} negative elements`;
+  const result = array.some((el) => el < 0)
+    ? `There are negative elements in this array`
+    : `There are not any negative elements in this array.`;
   return result;
 };
 
